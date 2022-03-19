@@ -1,0 +1,40 @@
+def creditCardPayment(ticket):
+    credit_Amount = 0
+    credit_discount = 0.90 #10% discount
+    credit_Amount += ticket *credit_discount
+    return credit_Amount
+
+def cashPayment(ticket):
+    total_Cash = 0
+    total_Cash += ticket
+    return total_Cash
+
+def cinemaTicket():
+    creditAmount = 0
+    totalCash = 0
+    print ("how many adult tickets?")
+    adult = int (input())
+
+    print ("how many children tickets?")
+    children = int (input())
+    
+    #prices, adult = $6, kids = $4
+    ticket = adult * 6 + children * 4
+
+    while (True):
+        print ("payment method?  cash or credit?")
+        answer = input()
+        if answer == "cash":
+            totalCash = cashPayment (ticket) #strategy pattern 1
+            break
+        elif answer == "credit":
+            creditAmount = creditCardPayment (ticket) #strategy pattern 2
+            break
+        else:
+            print ("input cash or credit")
+        
+    print ("total cash amount", totalCash)
+    print ("total credit amount", creditAmount)
+cinemaTicket()
+         
+    
